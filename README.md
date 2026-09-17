@@ -8,20 +8,17 @@ My sister helped me by designing the exterior artwork and structure of the bin.
 
 ## Features
 
-* **Basketball-style trash disposal**
-  The bin is in the form of a small basketball arcade game and enables users to throw their trash through the hoop.
+* **Basketball-style trash disposal**  
+  The bin is designed to look like a small basketball arcade game in order to lure users into shooting their rubbish through the hoop.
 
-* **Automatic trash intake**
-  When an object goes through the hoop, an ultrasonic sensor picks this up and the Arduino then switches on two motors which drive the intake wheels and move the trash downwards.
+* **Pop-Up QR Code Reward**  
+  The ultrasonic sensor registers the score when an object goes through the hoop and then causes two DC motors to push the extended QR code panel out of the top frame.
 
-* **Motor control**
-  The L298N motor driver is used to control both DC motors, and the motors operate for five seconds once a shot has been detected.
+* **Interactive Scanning Period**  
+  The motorized mechanism keeps the QR code display visible for five seconds so that the user is able to scan it—for example, to access the digital web features or to keep track of the score—before automatically pulling it back inside the bin.
 
-* **Detection lockout**
-  Once the motors have stopped, the system waits for five seconds before checking for another shot. This is done in order to avoid the same object being detected more than once.
-
-* **QR code interface**
-  A QR code which is printed around the rim can be used for optional digital features such as score tracking or project information.
+* **Bi-Directional Motor Control**  
+  The motors are made to move forward in order to extend the panel and are then reversed to retract it when the scanning period is over.
 
 ## Hardware
 
@@ -40,11 +37,12 @@ The Arduino uses the following connections:
 
 The system is built using an Arduino Uno R3, an HC-SR04 ultrasonic sensor, an L298N motor driver and two TT gear motors; the motors are powered by a DC wall adapter whilst the Arduino handles reading the sensor and controlling the motors.
 
-## Coding Language Used
+## Coding Logic
 
-I used C++ in the Arduino program.
-
-The Arduino keeps on measuring the distance from the ultrasonic sensor; if an object is detected within 15 cm it switches on both motors at a PWM speed of 220 for a period of 5 seconds and then waits an additional 5 seconds before carrying out another detection.
+I programmed the Arduino in C++:
+The HC-SR04 ultrasonic sensor constantly checks for any objects passing within 15 cm of the rim.
+When the Arduino detects the situation it causes the motors to operate using PWM (at a speed of 220) in order to eject the QR code extension mechanism.
+The system keeps the display extended for five seconds before reversing the motor's direction in order to retract the module and re-arm the sensor loop.
 
 ## Authors
 
