@@ -1,4 +1,4 @@
-# Automated Mechatronic Trash System
+# Automated Mechatronic Trash Bin
 
 This is a personal project which I have made in collaboration with my sister in order to experiment with combining physical sensors, motors and an Arduino into an interactive trash bin; the project takes the form of a mini basketball arcade game since when trash is thrown through the hoop the distance sensor picks it up and two motorised wheels draw the trash down into the bin.
 
